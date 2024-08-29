@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        	button{
+			width:200px;
+			height:40px;
+			border-radius: 5%;
+
+		}
+        select{
+            width:250px;
+            height:30px;
+            border-radius:5%;
+        }
+        body{
+            background-color:#0A1828;
+           color:#178582;
+        }
+    h1{
+        text-align:center;
+        color:#BFA181;
+    }
+     
+    div{
+        padding-left:5%;
+        padding-right:5%;
+    }
+    h2{
+        color:#BFA181;
+        text-align: center;
+    }
+    p{
+        text-align:center;
+        text-align:justify;
+    
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #178582;
+    }
+    
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color:#0A1828;
+      color: white;
+    }
+    </style>
+</head>
+<body>
+		
+		<div class="topnav">
+		  <a href="index.html">Home</a>
+		  <a class="active" href="GPA.html">GPA</a>
+		  <a href="CGPA.html">CGPA</a>
+		  <a href="#about">About</a>
+		</div>
+    <div id="index">
+        <div>
+            <br>
+            <br>
+            <br>
+            <label for="Course"><b>Select your Course :   <b></label>
+            <select title="Course" id="Course" name="Course">
+                <option value="B.Arch">B.Arch</option>
+                <option value="B.E. Aeronautical Engineering">B.E. Aeronautical Engineering</option>
+                <option value="B.E. Aerospace Engineering">B.E. Aerospace Engineering</option>
+                <option value="B.E. Agriculture Engineering">B.E. Agriculture Engineering</option>
+                <option value="B.E. Automobile Engineering">B.E. Automobile Engineering</option>
+                <option value="B.E. Biomedical Engineering">B.E. Biomedical Engineering</option>
+                <option value="B.E. Civil Engineering">B.E. Civil Engineering</option>
+                <option value="B.E. Computer Science and Engineering">B.E. Computer Science and Engineering</option>
+                <option value="B.E. Electricals and Communication Engineering">B.E. Electricals and Communication
+                    Engineering</option>
+                <option value="B.E. Electricals and Electronics Engineering">B.E. Electricals and Electronics
+                    Engineering</option>
+                <option value="B.E. Mechanical Engineering">B.E. Mechanical Engineering</option>
+                <option value="B.E. Mechatronics Engineering">B.E. Mechatronics Engineering</option>
+                <option value="B.Tech. Information Technology">B.Tech. Information Technology</option>
+                <option value="B.Tech. Artificial Intelligence and Data Science">B.Tech. Artificial Intelligence and
+                    Data Science</option>
+                <option value="B.Tech. Biotechnology Technology">B.Tech. Biotechnology Technology</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <br>
+            <label for="Regulation"><b>Select Regulation :   <b></label>
+            <select title="Regulation" id="Regulation" name="Regulation">
+                <option value="2021">2021</option>
+                <option value="2017">2017</option>
+                <option value="2013">2013</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <br>
+            <label for="Semester"><b>Select Semester :    <b></label>
+            <select title="Semester" id="Semester" name="Semester">
+                <option value="1">Semester-1</option>
+                <option value="2">Semester-2</option>
+                <option value="3">Semester-3</option>
+                <option value="4">Semester-4</option>
+                <option value="5">Semester-5</option>
+                <option value="6">Semester-6</option>
+                <option value="7">Semester-7</option>
+                <option value="8">Semester-8</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!-- <input type="submit" id="du" onclick="hi()" > -->
+            <button onclick="hi()"><b>Evaluate</b></button>
+            
+        </div>
+    </div>
+
+
+    <script>
+        function hi() {
+            var sem = parseInt(document.getElementById("Semester").value);
+            console.log(sem);
+            switch(sem){
+                case 1:
+                    window.location.href = "./sem1.html"
+                    break;
+                case 2:
+                    window.location.href = "./sem2.html"
+                    break;
+                case 3:
+                    window.location.href = "./sem3.html"
+                    break;
+                case 4:
+                    window.location.href = "./sem4.html"
+                    break;
+                case 5:
+                    window.location.href = "./sem5.html"
+                    break;
+                case 6:
+                    window.location.href = "./sem6.html"
+                    break;
+                case 7:
+                    window.location.href = "./sem7.html"
+                    break;
+                case 8:
+                    window.location.href = "./sem8.html"
+                    break;
+                    
+            }
+        }
+    </script>
+</body>
+</html>

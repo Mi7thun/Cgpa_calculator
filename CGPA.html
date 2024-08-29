@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CGPA CALCULATOR</title>
+	<style>
+		#result{
+			padding-left:45%;
+		}
+		#con{
+			padding-left:45%;
+
+		}
+		button{
+			width:200px;
+			height:40px;
+			border-radius: 5%;
+
+		}
+		select{
+			border-radius:5%;
+			width:250px;
+			height:30px;
+		}
+		body{
+			background-color:#0A1828;
+		   color:#178582;
+		}
+	h1{
+		text-align:center;
+		color:#BFA181;
+	}
+	 
+	div{
+		padding-left:5%;
+		padding-right:5%;
+	}
+	h2{
+		color:#BFA181;
+	}
+	p{
+		text-align:center;
+		text-align:justify;
+	
+	}
+	body {
+	  margin: 0;
+	  font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	.topnav {
+	  overflow: hidden;
+	  background-color: #178582;
+	}
+	
+	.topnav a {
+	  float: left;
+	  color: #f2f2f2;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	  font-size: 17px;
+	}
+	
+	.topnav a:hover {
+	  background-color: #ddd;
+	  color: black;
+	}
+	
+	.topnav a.active {
+	  background-color:#0A1828;
+	  color: white;
+	}
+	</style>
+</head>
+<body>
+		
+		<div class="topnav">
+		  <a href="index.html">Home</a>
+		  <a href="GPA.html">GPA</a>
+		  <a class="active" href="CGPA.html">CGPA</a>
+		  <a href="#about">About</a>
+		</div>
+	<div>
+	<h1>
+       St Joseph's Institute of Technology ( Works only for IT Department )
+    </h1>
+    <h2>
+        CGPA Calculator 
+    </h2>
+	<br>
+	<br>
+  
+	<label for="select-numbers"><b>Select Semesters :    <b></label>
+	<select id="select-numbers">
+		<option value="0">Select Semesters</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+
+	</select>
+    <br>
+    <br>
+	<br>
+
+	<div id="input-boxes"></div>
+	<button onclick="evaluateInputBoxes()"><b>Evaluate</b></button>
+    <br>
+    <br>
+
+	<div id="result"></div>
+	<div id="con"></div>
+	<div>
+
+	<script>
+		function createInputBoxes() {
+			// Get the selected value from the dropdown list
+			var selectBox = document.getElementById("select-numbers");
+			console.log(selectBox);
+			
+			var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+
+			// Create the number of input boxes based on the selected value
+			var inputBoxes = "";
+			for (var i = 0; i < selectedValue; i++) {
+				inputBoxes += "<label for='input-box-" + i + "'>Semester " + (i+1) +    " :       </label>";
+				inputBoxes += "<input type='number' step='0.01' id='input-box-" + i + "' placeholder='Semester "+(i+1)+"'> <br><br><br>";
+			}
+
+			// Add the input boxes to the page
+			document.getElementById("input-boxes").innerHTML = inputBoxes;
+		}
+
+		function evaluateInputBoxes() {
+			// Get the values of the input boxes
+			var inputValues = [];
+			var inputBoxes = document.querySelectorAll("input[type='number']");
+			for (var i = 0; i < inputBoxes.length; i++) {
+				inputValues.push(parseFloat(inputBoxes[i].value));
+			}
+
+			// Calculate the sum of the input values
+            var credits=[25,25,24,24,25,24,26,26]
+			var sum = 0;
+            var sumCredit=0;
+
+			for (var i = 0; i < inputValues.length; i++) {
+				sum += inputValues[i]*credits[i];
+                sumCredit+=credits[i];
+			}
+
+			// Display the result
+			//document.getElementById("result").innerHTML = "The sum of the input values is: " + sum.toFixed(2);
+            document.getElementById("result").innerHTML = "Your CGPA is : " + (sum/sumCredit).toFixed(2);
+			con.innerHTML="Congartulations... You have Passed "+"&#128525"
+		}
+
+		// Call the createInputBoxes function when the dropdown list changes
+		document.getElementById("select-numbers").addEventListener("change", createInputBoxes);
+	</script>
+</body>
+</html>
+    

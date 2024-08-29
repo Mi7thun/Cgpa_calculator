@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        GPA calculator
+    </title>
+
+    <style>
+         select{
+         width:100px;
+         text-align: center;
+      }
+       #tot{
+         padding-left:45%;
+      }
+      #con{
+         padding-left:45%;
+      }
+           	button{
+			width:100px;
+			height:30px;
+			border-radius: 5%;
+
+		}
+		      body{
+            background-color:#0A1828;
+           color:#178582;
+        }
+    h1{
+        text-align:center;
+        color:#BFA181;
+    }
+     
+    div{
+        padding-left:5%;
+        padding-right:5%;
+    }
+    h2{
+        color:#BFA181;
+        text-align: center;
+    }
+    p{
+        text-align:center;
+        text-align:justify;
+    
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #178582;
+    }
+    
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color:#0A1828;
+      color: white;
+    }
+		</style>
+</head>
+<body>
+		
+		<div class="topnav">
+		  <a href="index.html">Home</a>
+		  <a class="active" href="GPA.html">GPA</a>
+		  <a href="CGPA.html">CGPA</a>
+		  <a href="#about">About</a>
+		</div>
+<div id="GPA">
+    <h1>Enter the Grades to calculate GPA</h1>
+    <div >
+        <label for="Discrete Mathematics">Discrete Mathematics(MA8351) :</label>
+        <select title="MA8351" id="MA8351" name="MA8351" onchange="gradeSelector1()">
+             <option value="10">O</option>
+            <option value="9">A+</option>
+            <option value="8">A</option>
+            <option value="7">B+</option>
+            <option value="6">B</option>
+            <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="Digital Principles and System Design">Digital Principles and System Design(CS8351) :</label>
+        <select title="CS8351" id="CS8351" name="CS8351" onchange="gradeSelector2()">
+             <option value="10">O</option>
+            <option value="9">A+</option>
+            <option value="8">A</option>
+            <option value="7">B+</option>
+            <option value="6">B</option>
+            <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="Data Structures">Data Structures (CS8391) :</label>
+        <select title="CS8391" id="CS8391" name="CS8391" onchange="gradeSelector3()">
+             <option value="10">O</option>
+            <option value="9">A+</option>
+            <option value="8">A</option>
+            <option value="7">B+</option>
+            <option value="6">B</option>
+            <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="Object Oriented Programming">Object Oriented Programming (CS8392) :</label>
+        <select title="CS8392" id="CS8392" name="CS8392" onchange="gradeSelector4()">
+             <option value="10">O</option>
+            <option value="9">A+</option>
+            <option value="8">A</option>
+            <option value="7">B+</option>
+            <option value="6">B</option>
+            <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="Analog and Digital Communication">Analog and Digital Communication(EC8394) :</label>
+        <select title="EC8394" id="EC8394" name="EC8394" onchange="gradeSelector5()">
+             <option value="10">O</option>
+            <option value="9">A+</option>
+            <option value="8">A</option>
+            <option value="7">B+</option>
+            <option value="6">B</option>
+            <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="Data Structures Laboratory">Data Structures Laboratory (CS8381) :</label>
+        <select title="CS8381" id="CS8381" name="CS8381" onchange="gradeSelector6()">
+             <option value="10">O</option>
+            <option value="9">A+</option>
+            <option value="8">A</option>
+            <option value="7">B+</option>
+            <option value="6">B</option>
+            <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="Object Oriented Programming Laboratory">Object Oriented Programming Laboratory (CS8383) :</label>
+        <select title="CS8383" id="CS8383" name="CS8383" onchange="gradeSelector7()">
+             <option value="10">O</option>
+            <option value="9">A+</option>
+            <option value="8">A</option>
+            <option value="7">B+</option>
+            <option value="6">B</option>
+            <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="Digital Systems Laboratory">Digital Systems Laboratory (CS8382) :</label>
+        <select title="CS8382" id="CS8382" name="CS8382" onchange="gradeSelector8()">
+             <option value="10">O</option>
+            <option value="9">A+</option>
+            <option value="8">A</option>
+            <option value="7">B+</option>
+            <option value="6">B</option>
+            <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="Interpersonal Skills – Listening and Speaking">	Interpersonal Skills – Listening and Speaking (HS8381) :</label>
+        <select title="HS8381" id="HS8381" name="HS8381" onchange="gradeSelector9()">
+             <option value="10">O</option>
+            <option value="9">A+</option>
+            <option value="8">A</option>
+            <option value="7">B+</option>
+            <option value="6">B</option>
+            <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <!-- <input type="submit" value="Calculate" onclick="sum()"> -->
+        <button onclick="sum()"><b>Calculate</b></button>
+    </div>
+    <p id="tot"></p>
+    <p id="con"></p>
+
+
+
+</div>
+<script>
+var arr = [10*4,10*4,10*3,10*3,10*3,10*4,10*4,10*4,10*2]
+document.getElementById("MA8351").addEventListener("change" , (event) => {
+   arr[0] = parseInt(event.target.value)*4
+   console.log(event.target.value);
+})
+document.getElementById("CS8351").addEventListener("change" , (event) => {
+   arr[1] = parseInt(event.target.value)*4
+   console.log(event.target.value);
+})
+document.getElementById("CS8391").addEventListener("change" , (event) => {
+   arr[2] = parseInt(event.target.value)*3
+   console.log(event.target.value);
+})
+document.getElementById("CS8392").addEventListener("change" , (event) => {
+   arr[3] = parseInt(event.target.value)*3
+   console.log(event.target.value);
+})
+document.getElementById("EC8394").addEventListener("change" , (event) => {
+   arr[4] = parseInt(event.target.value)*3
+   console.log(event.target.value);
+})
+document.getElementById("CS8381").addEventListener("change" , (event) => {
+   arr[5] = parseInt(event.target.value)*4
+   console.log(event.target.value);
+})
+document.getElementById("CS8383").addEventListener("change" , (event) => {
+   arr[6] = parseInt(event.target.value)*4
+   console.log(event.target.value);
+})
+
+document.getElementById("CS8382").addEventListener("change" , (event) => {
+   arr[7] = parseInt(event.target.value)*4
+   console.log(event.target.value);
+})
+document.getElementById("HS8381").addEventListener("change" , (event) => {
+   arr[8] = parseInt(event.target.value)*2
+   console.log(event.target.value);
+})
+
+function sum(){
+   console.log(arr);
+   var credits=31
+   var total = 0;
+   
+   for (let i = 0; i < arr.length; i++) {
+       total += arr[i];
+   }
+
+    selectElement1= document.querySelector('#MA8351').value;
+    selectElement2= document.querySelector('#CS8351').value;
+    selectElement3= document.querySelector('#CS8391').value;
+    selectElement4= document.querySelector('#CS8392').value;
+    selectElement5= document.querySelector('#EC8394').value;
+    selectElement6= document.querySelector('#CS8381').value;
+    selectElement7= document.querySelector('#CS8383').value;
+    selectElement8= document.querySelector('#CS8382').value;
+    selectElement9= document.querySelector('#HS8381').value;
+    tot.innerHTML = "Your GPA is : "+(total/credits).toFixed(2);
+   // console.log(selectElement);
+   if(selectElement1==0||selectElement2==0||selectElement3==0||selectElement4==0||selectElement5==0||selectElement5==0||selectElement6==0||selectElement7==0||selectElement8==0||selectElement9==0){
+      con.innerHTML="Sorry to say you have failed...<br>Don't worry apply for revaluation"+"&#128521";
+   }
+   else{
+    
+    con.innerHTML = "Congratuations..."+ "&#128525"
+  }
+
+}
+</script>
+</body>
+
+</html>

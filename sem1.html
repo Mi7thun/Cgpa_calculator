@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        GPA calculator
+    </title>
+    <style>
+      select{
+         width:100px;
+         text-align: center;
+      }
+      #tot{
+         padding-left:45%;
+      }
+      #con{
+         padding-left:45%;
+      }
+       	button{
+			width:100px;
+			height:30px;
+			border-radius: 5%;
+
+		}
+      div{
+        padding-left:5%;
+        padding-right:5%;
+    }
+		      body{
+            background-color:#0A1828;
+           color:#178582;
+        }
+       h1{
+        text-align:center;
+        color:#BFA181;
+       }
+
+    h2{
+        color:#BFA181;
+        text-align: center;
+    }
+    p{
+        text-align:center;
+        text-align:justify;
+    
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #178582;
+    }
+    
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color:#0A1828;
+      color: white;
+    }
+		</style>
+</head>
+<body>
+		
+		<div class="topnav">
+		  <a href="index.html">Home</a>
+		  <a class="active" href="GPA.html">GPA</a>
+		  <a href="CGPA.html">CGPA</a>
+		  <a href="#about">About</a>
+		</div>
+    <div id="GPA">
+    <h1>Enter the Grades to calculate GPA</h1>
+    <div >
+        <label for="Communicative English">Communicative English (HS8151) :</label>
+        <select title="HS8151" id="HS8151" name="HS8151" onchange="gradeSelector1()">
+           <option value="10">O</option>
+        <option value="9">A+</option>
+        <option value="8">A</option>
+        <option value="7">B+</option>
+        <option value="6">B</option>
+        <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="Engineering Mathematics-1">Engineering Mathematics - 1 (MA8151) :</label>
+        <select title="MA8151" id="MA8151" name="MA8151" onchange="gradeSelector2()">
+           <option value="10">O</option>
+        <option value="9">A+</option>
+        <option value="8">A</option>
+        <option value="7">B+</option>
+        <option value="6">B</option>
+        <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="Engineering Physics">Engineering Physics (PH8151) :</label>
+        <select title="PH8151" id="PH8151" name="PH8151" onchange="gradeSelector3()">
+           <option value="10">O</option>
+        <option value="9">A+</option>
+        <option value="8">A</option>
+        <option value="7">B+</option>
+        <option value="6">B</option>
+        <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="Engineering Chemistry">Engineering Chemistry (CY8151) :</label>
+        <select title="CY8151" id="CY8151" name="CY8151" onchange="gradeSelector4()">
+           <option value="10">O</option>
+        <option value="9">A+</option>
+        <option value="8">A</option>
+        <option value="7">B+</option>
+        <option value="6">B</option>
+        <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="Problem Solving and Python Programming">Problem Solving and Python Programming (GE8151) :</label>
+        <select title="GE8151" id="GE8151" name="GE8151" onchange="gradeSelector5()">
+           <option value="10">O</option>
+        <option value="9">A+</option>
+        <option value="8">A</option>
+        <option value="7">B+</option>
+        <option value="6">B</option>
+        <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="Engineering graphics">Engineering graphics (GE8152) :</label>
+        <select title="GE8152" id="GE8152" name="GE8152" onchange="gradeSelector6()">
+           <option value="10">O</option>
+        <option value="9">A+</option>
+        <option value="8">A</option>
+        <option value="7">B+</option>
+        <option value="6">B</option>
+        <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="Problem Solving and Python Programming">Problem Solving and Python Programming Laboratory (GE8161) :</label>
+        <select title="GE8161" id="GE8161" name="GE8161" onchange="gradeSelector7()">
+           <option value="10">O</option>
+        <option value="9">A+</option>
+        <option value="8">A</option>
+        <option value="7">B+</option>
+        <option value="6">B</option>
+        <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="Physics and Chemistry Laboratory">Physics and Chemistry Laboratory (BS8161) :</label>
+        <select title="BS8161" id="BS8161" name="BS8161" onchange="gradeSelector8()">
+           <option value="10">O</option>
+        <option value="9">A+</option>
+        <option value="8">A</option>
+        <option value="7">B+</option>
+        <option value="6">B</option>
+        <option value="0">RA</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <!-- <input type="submit" value="Calculate" onclick="sum()"> -->
+        <button onclick="sum()"><b>Calculate</b></button>
+    </div>
+    <p id="tot"></p>
+    <p id="con"></p>
+
+
+</div>
+
+<script>
+    /*document.getElementById("GPA").style.visibility = 'hidden';
+    function myFunction() {
+        document.getElementById("index").replaceWith(document.getElementById("GPA"));
+        document.getElementById("GPA").style.visibility = 'visible';
+    }*/
+var arr = [10*4,10*4,10*3,10*3,10*3,10*4,10*2,10*2]
+document.getElementById("HS8151").addEventListener("change" , (event) => {
+    arr[0] = parseInt(event.target.value)*4
+    console.log(event.target.value);
+ })
+ document.getElementById("MA8151").addEventListener("change" , (event) => {
+    arr[1] = parseInt(event.target.value)*4
+    console.log(event.target.value);
+ })
+ document.getElementById("PH8151").addEventListener("change" , (event) => {
+    arr[2] = parseInt(event.target.value)*3
+    console.log(event.target.value);
+ })
+ document.getElementById("CY8151").addEventListener("change" , (event) => {
+    arr[3] = parseInt(event.target.value)*3
+    console.log(event.target.value);
+ })
+ document.getElementById("GE8151").addEventListener("change" , (event) => {
+    arr[4] = parseInt(event.target.value)*3
+    console.log(event.target.value);
+ })
+ document.getElementById("GE8152").addEventListener("change" , (event) => {
+    arr[5] = parseInt(event.target.value)*4
+    console.log(event.target.value);
+ })
+ document.getElementById("GE8161").addEventListener("change" , (event) => {
+    arr[6] = parseInt(event.target.value)*2
+    console.log(event.target.value);
+ })
+
+ document.getElementById("BS8161").addEventListener("change" , (event) => {
+    arr[7] = parseInt(event.target.value)*2
+    console.log(event.target.value);
+ })
+
+var f=0;
+
+function sum(){
+    console.log(arr);
+    var credits=25      
+    var total = 0;
+    
+    for (let i = 0; i < arr.length; i++) {
+        total += arr[i];
+    }
+    selectElement1= document.querySelector('#HS8151').value;
+    selectElement2= document.querySelector('#MA8151').value;
+    selectElement3= document.querySelector('#PH8151').value;
+    selectElement4= document.querySelector('#CY8151').value;
+    selectElement5= document.querySelector('#GE8151').value;
+    selectElement6= document.querySelector('#GE8152').value;
+    selectElement7= document.querySelector('#GE8161').value;
+    selectElement8= document.querySelector('#BS8161').value;
+    tot.innerHTML = "Your GPA is : "+(total/credits).toFixed(2);
+   // console.log(selectElement);
+   if(selectElement1==0||selectElement2==0||selectElement3==0||selectElement4==0||selectElement5==0||selectElement5==0||selectElement6==0||selectElement7==0||selectElement8==0){
+      con.innerHTML="Sorry to say you have failed...<br>Don't worry apply for revaluation"+"&#128521";
+   }
+   else{
+    
+    con.innerHTML = "Congratuations..."+ "&#128525"
+  }
+
+}
+</script>
+
+</body>
+
+</html>
